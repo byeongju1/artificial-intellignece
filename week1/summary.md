@@ -47,6 +47,7 @@ df = pd.read_csv("data.csv")
 
 # 데이터 출력
 print(df.head())
+</details>
 ```
 
 ✅ JSON 파일

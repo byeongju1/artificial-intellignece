@@ -34,10 +34,11 @@ AI 모델을 학습시킬 때, 데이터를 **Train 데이터(훈련 데이터)*
 AI 모델을 학습시키기 위해서는 데이터를 입력해야 한다.
 데이터를 입력하는 방법에는 **파일(File), 라이브러리(Library), 웹 주소(URL)**를 통한 방식이 있다.
 
-# 1. 파일(File)로 데이터 입력
+### 1. 파일(File)로 데이터 입력
 파일에서 데이터를 읽어오는 방법은 가장 일반적인 방식이며, CSV, JSON, Excel, TXT 등 다양한 형식이 존재한다.
 
 ✅CSV 파일
+<details>
 ```
 import pandas as pd
 
@@ -70,3 +71,79 @@ df = pd.read_excel("data.xlsx")
 # 데이터 출력
 print(df.head())
 ```
+### 2. 라이브러리(Library)로 데이터 입력
+라이브러리를 사용하면 미리 제공되는 공개 데이터셋을 쉽게 불러올 수 있다.
+✅ scikit-learn 데이터셋 사용
+```from sklearn.datasets import load_iris
+
+# 아이리스(붓꽃) 데이터셋 불러오기
+iris = load_iris()
+
+# 데이터 확인
+print(iris.data[:5])  # 첫 5개 샘플 출력
+print(iris.target[:5])  # 레이블(정답) 출력
+```
+
+✅ TensorFlow 데이터셋 사용
+```import tensorflow as tf
+
+# MNIST 데이터셋 로드 (손글씨 이미지)
+(X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
+
+print("훈련 데이터 크기:", X_train.shape)  # (60000, 28, 28)
+print("테스트 데이터 크기:", X_test.shape)  # (10000, 28, 28)
+```
+
+### 3. 웹 주소(URL)로 데이터 입력
+인터넷에서 실시간 데이터를 가져오는 방법으로, 웹 크롤링(Web Crawling) 또는 API 요청을 사용한다.
+
+✅ 웹에서 CSV 파일 다운로드 후 읽기
+```
+import pandas as pd
+
+# 웹에서 CSV 파일 가져오기
+url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv"
+df = pd.read_csv(url)
+
+# 데이터 출력
+print(df.head())
+```
+
+✅ API를 통해 JSON 데이터 가져오기
+```
+import requests
+
+# API 요청 (예: 공개 날씨 API)
+url = "https://api.open-meteo.com/v1/forecast?latitude=37.57&longitude=126.98&daily=temperature_2m_max&timezone=Asia/Seoul"
+response = requests.get(url)
+data = response.json()
+
+# 데이터 출력
+print(data)
+```
+
+상황에 따라 적절한 방법을 선택!
+
+정리된 데이터셋 사용 → 📂 파일(File)
+기존 데이터셋 활용 → 📚 라이브러리(Library)
+실시간 데이터 수집 → 🌐 웹 주소(URL)
+
+## 딥러닝과 머신러닝의 차이점
+**딥러닝(Deep Learning)**과 **머신러닝(Machine Learning)**은 인공지능(AI)의 하위 개념이지만,
+머신러닝은 사람이 특징을 정의하고 학습시키는 방식, 딥러닝은 신경망을 이용해 스스로 특징을 학습하는 방식이라는 차이가 있다.
+
+### 1. 머신러닝(Machine Learning)
+머신러닝은 데이터를 이용해 패턴을 학습하고 예측하는 알고리즘을 의미하며, 사람이 직접 특징(Feature)을 정의해야 한다.
+
+✅ 머신러닝의 특징
+- 데이터를 분석하여 패턴을 학습하고, 새로운 데이터에 대해 예측을 수행.
+- 모델을 학습시키기 위해 특징(Feature)을 사람이 직접 설계해야 함.
+- 선형 회귀, 의사결정나무, 랜덤 포레스트, SVM, KNN 등 다양한 알고리즘이 존재.
+
+### 2. 딥러닝(Deep Learning)
+딥러닝은 머신러닝의 하위 분야로, **인공 신경망(ANN, Artificial Neural Network)**을 사용하여 학습하는 방식이다.
+
+✅ 딥러닝의 특징
+사람이 직접 특징을 정의할 필요 없이, 모델이 스스로 학습함.
+다층 신경망(Neural Network)을 사용하여 복잡한 데이터(이미지, 음성, 자연어 등)도 처리 가능.
+학습을 위해 대량의 데이터와 강력한 컴퓨팅 자원(GPU, TPU)이 필요함.

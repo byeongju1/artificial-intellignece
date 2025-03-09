@@ -36,12 +36,13 @@ AI 모델을 학습시키기 위해서는 데이터를 입력해야 한다.
 
 1. 파일(File)로 데이터 입력
 파일에서 데이터를 읽어오는 방법은 가장 일반적인 방식이며, CSV, JSON, Excel, TXT 등 다양한 형식이 존재한다.
-import pandas as pd
+
+```import pandas as pd
 
 # CSV 파일에서 데이터 읽기
 df = pd.read_csv("data.csv")
 
 # 데이터 출력
-print(df.head())
+print(df.head())```
 
 

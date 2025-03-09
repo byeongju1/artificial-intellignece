@@ -39,6 +39,7 @@ AI 모델을 학습시키기 위해서는 데이터를 입력해야 한다.
 
 ✅CSV 파일
 <details>
+<summary>📌 코드 보기</summary>
     
 ```
 import pandas as pd
@@ -85,7 +86,8 @@ print(df.head())
 ✅ scikit-learn 데이터셋 사용
 <details>
     
-```from sklearn.datasets import load_iris
+```
+from sklearn.datasets import load_iris
 
 # 아이리스(붓꽃) 데이터셋 불러오기
 iris = load_iris()
@@ -97,7 +99,10 @@ print(iris.target[:5])  # 레이블(정답) 출력
 </details>
 
 ✅ TensorFlow 데이터셋 사용
-```import tensorflow as tf
+<details>
+    
+```
+import tensorflow as tf
 
 # MNIST 데이터셋 로드 (손글씨 이미지)
 (X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
@@ -105,11 +110,14 @@ print(iris.target[:5])  # 레이블(정답) 출력
 print("훈련 데이터 크기:", X_train.shape)  # (60000, 28, 28)
 print("테스트 데이터 크기:", X_test.shape)  # (10000, 28, 28)
 ```
+</details>
 
 ### 3. 웹 주소(URL)로 데이터 입력
 인터넷에서 실시간 데이터를 가져오는 방법으로, 웹 크롤링(Web Crawling) 또는 API 요청을 사용한다.
 
 ✅ 웹에서 CSV 파일 다운로드 후 읽기
+<details>
+    
 ```
 import pandas as pd
 
@@ -120,8 +128,11 @@ df = pd.read_csv(url)
 # 데이터 출력
 print(df.head())
 ```
+</details>
 
 ✅ API를 통해 JSON 데이터 가져오기
+</details>
+
 ```
 import requests
 
@@ -133,6 +144,7 @@ data = response.json()
 # 데이터 출력
 print(data)
 ```
+</details>
 
 상황에 따라 적절한 방법을 선택!
 

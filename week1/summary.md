@@ -52,6 +52,8 @@ print(df.head())
 </details>
 
 ✅ JSON 파일
+<details>
+    
 ```
 import json
 
@@ -62,8 +64,11 @@ with open("data.json", "r") as f:
 # 데이터 확인
 print(data)
 ```
+</details>
 
 ✅ Excel 파일
+<details>
+    
 ```
 import pandas as pd
 
@@ -73,9 +78,13 @@ df = pd.read_excel("data.xlsx")
 # 데이터 출력
 print(df.head())
 ```
+</details>
+
 ### 2. 라이브러리(Library)로 데이터 입력
 라이브러리를 사용하면 미리 제공되는 공개 데이터셋을 쉽게 불러올 수 있다.
 ✅ scikit-learn 데이터셋 사용
+<details>
+    
 ```from sklearn.datasets import load_iris
 
 # 아이리스(붓꽃) 데이터셋 불러오기
@@ -85,6 +94,7 @@ iris = load_iris()
 print(iris.data[:5])  # 첫 5개 샘플 출력
 print(iris.target[:5])  # 레이블(정답) 출력
 ```
+</details>
 
 ✅ TensorFlow 데이터셋 사용
 ```import tensorflow as tf

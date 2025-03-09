@@ -39,6 +39,7 @@ AI 모델을 학습시키기 위해서는 데이터를 입력해야 한다.
 
 ✅CSV 파일
 <details>
+    
 ```
 import pandas as pd
 
@@ -47,9 +48,8 @@ df = pd.read_csv("data.csv")
 
 # 데이터 출력
 print(df.head())
-</details>
 ```
-
+</details>
 ✅ JSON 파일
 ```
 import json

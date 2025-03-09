@@ -50,6 +50,7 @@ df = pd.read_csv("data.csv")
 print(df.head())
 ```
 </details>
+
 ✅ JSON 파일
 ```
 import json

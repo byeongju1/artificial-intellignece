@@ -39,7 +39,7 @@ AI 모델을 학습시키기 위해서는 데이터를 입력해야 한다.
 
 ✅CSV 파일
 <details>
-<summary>📌 코드 보기</summary>
+<summary> 코드 보기</summary>
     
 ```
 import pandas as pd
@@ -54,6 +54,7 @@ print(df.head())
 
 ✅ JSON 파일
 <details>
+<summary> 코드 보기</summary>
     
 ```
 import json
@@ -69,6 +70,7 @@ print(data)
 
 ✅ Excel 파일
 <details>
+<summary> 코드 보기</summary>
     
 ```
 import pandas as pd
@@ -85,6 +87,7 @@ print(df.head())
 라이브러리를 사용하면 미리 제공되는 공개 데이터셋을 쉽게 불러올 수 있다.
 ✅ scikit-learn 데이터셋 사용
 <details>
+<summary> 코드 보기</summary>
     
 ```
 from sklearn.datasets import load_iris
@@ -100,6 +103,7 @@ print(iris.target[:5])  # 레이블(정답) 출력
 
 ✅ TensorFlow 데이터셋 사용
 <details>
+<summary> 코드 보기</summary>
     
 ```
 import tensorflow as tf
@@ -117,6 +121,7 @@ print("테스트 데이터 크기:", X_test.shape)  # (10000, 28, 28)
 
 ✅ 웹에서 CSV 파일 다운로드 후 읽기
 <details>
+<summary> 코드 보기</summary>
     
 ```
 import pandas as pd
@@ -131,7 +136,9 @@ print(df.head())
 </details>
 
 ✅ API를 통해 JSON 데이터 가져오기
-</details>
+<details>
+<summary> 코드 보기</summary>
+
 
 ```
 import requests
